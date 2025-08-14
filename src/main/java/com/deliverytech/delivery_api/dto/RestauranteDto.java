@@ -5,18 +5,18 @@ package com.deliverytech.delivery_api.dto;
 import lombok.Data;
 
 @Data
-public class RestaurantDto 
+public class RestauranteDto 
 {
     private String name;
     private String description;
 
-    public RestaurantDto(String name, String description)
+    public RestauranteDto(String name, String description)
     {
         this.name = name;
         this.description = description;
     }    
 
-    public RestaurantDto() 
+    public RestauranteDto() 
     {
         super();
     }

@@ -5,33 +5,33 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.deliverytech.delivery_api.dto.RestaurantDto;
-import com.deliverytech.delivery_api.entity.Restaurant;
-import com.deliverytech.delivery_api.repository.IRestaurantRepository;
+import com.deliverytech.delivery_api.dto.RestauranteDto;
+import com.deliverytech.delivery_api.entity.Restaurante;
+import com.deliverytech.delivery_api.repository.IRestauranteRepository;
 
 @Service
-public class RestaurantService 
+public class RestauranteService 
 {
     @Autowired
-    private IRestaurantRepository repository;
+    private IRestauranteRepository repository;
 
-    public RestaurantService(IRestaurantRepository restaurantRepository) {
+    public RestauranteService(IRestauranteRepository restaurantRepository) {
         this.repository = restaurantRepository;
     }
 
-    public RestaurantService() {
+    public RestauranteService() {
         super();
     }
 
-    public List<RestaurantDto> findAll()
+    public List<RestauranteDto> findAll()
     {
         return repository.findAll().stream()
                 .map(this::convertEntityToDto)
                 .collect(Collectors.toList());   
     }
-    private RestaurantDto convertEntityToDto(Restaurant entity)
+    private RestauranteDto convertEntityToDto(Restaurante entity)
     {
-        RestaurantDto dto = new RestaurantDto();
+        RestauranteDto dto = new RestauranteDto();
         dto.setName(entity.getNome());
         dto.setDescription(entity.getDescricao());
 

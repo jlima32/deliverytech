@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.deliverytech.delivery_api.dto.RestaurantDto;
-import com.deliverytech.delivery_api.service.RestaurantService;
+import com.deliverytech.delivery_api.dto.RestauranteDto;
+import com.deliverytech.delivery_api.service.RestauranteService;
 
 @CrossOrigin(origins = "*")
-@RequestMapping("api/restaurants")
+@RequestMapping("api/v1/restaurants")
 @RestController
-public class RestaurantController 
+public class RestauranteController 
 {
-    private RestaurantService restaurantService;
+    private RestauranteService restaurantService;
 
     @Autowired
-    public RestaurantController(RestaurantService restaurantService) {
+    public RestauranteController(RestauranteService restaurantService) {
         this.restaurantService = restaurantService;
     }
     
     @GetMapping("/findAll")
-    public List<RestaurantDto> listRestaurants() 
+    public List<RestauranteDto> listRestaurants() 
     {
         return restaurantService.findAll();
     }
